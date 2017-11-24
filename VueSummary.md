@@ -77,4 +77,12 @@ this.$axios.get(this.apiUrl + '/api/SelectListManage/GetHmPriceTypeList')
 此时orderAmounts是一个数组，从后台拿到所有的下拉框数据，在页面上用v-for 循环，记得:label="orderAmount.text" 这个 需要在label前面加个冒号：，这样才可以绑定上。:value="orderAmount.value" 这个value前面也是，如果不加的话，当你每次选择的时候，选择的始终是最后一个，所以需要加上冒号，
 :key="orderAmount.id" 这个大多人可能会忘记写，如果不写控制台也不会报错，但回报警告⚠️，因为遍历的时候需要每一个id，也就是key，所以得记得！！
 
+10.在开发中如果遇到控制台打印出如下东西： console.log(error);  2017.11.24添加）
+  Error: Request failed with status code 401
+    at createError (createError.js?c712:16)
+    at settle (settle.js?4fa6:18)
+    at XMLHttpRequest.handleLoad (xhr.js?0730:77)
+
+这个时候你需要转换一下，方法为 console.log(JSON.stringify(error)) ;这样就打印出JSON对象了！！    
+
 ```
